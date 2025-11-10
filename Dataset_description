@@ -1,0 +1,31 @@
+| Column              | Description                       |
+| ------------------- | --------------------------------- |
+| `price`             | Selling price of the car          |
+| `age_08_04`         | Age in months as of August 2004   |
+| `mfg_year`          | Year of manufacturing             |
+| `km`                | Kilometers driven (mileage)       |
+| `fuel_type`         | Fuel type (Petrol, Diesel, etc.)  |
+| `hp`                | Horsepower                        |
+| `met_color`         | 1 if metallic color, 0 otherwise  |
+| `color`             | Color of the car                  |
+| `automatic`         | 1 = Automatic transmission        |
+| `cc`                | Engine displacement in cc         |
+| `doors`             | Number of doors                   |
+| `gears`             | Transmission gears                |
+| `quarterly_tax`     | Estimated quarterly road tax      |
+| `weight`            | Weight of the car (kg)            |
+| `mfr_guarantee`     | 1 = Manufacturer guarantee valid  |
+| `bovag_guarantee`   | 1 = BOVAG guarantee valid         |
+| `abs`               | Anti-lock Braking System          |
+| `airbag_1`          | Driver airbag                     |
+| `airbag_2`          | Passenger airbag                  |
+| `airco`             | Air conditioning                  |
+| `automatic_airco`   | Automatic air conditioning system |
+| `boardcomputer`     | Onboard computer                  |
+| `cd_player`         | CD player installed               |
+| `central_lock`      | Central locking system            |
+| `powered_windows`   | Power windows                     |
+| `power_steering`    | Power steering system             |
+| `mistlamps`         | Fog lights                        |
+| `parking_assistant` | Parking sensors                   |
+| `tow_bar`           | Tow bar installed                 |

@@ -1,0 +1,11 @@
+in SQL
+If a pandas column has dtype "object" → treat it as TEXT in SQLite.
+Otherwise → treat it as REAL (SQLite’s floating‑point numeric type).
+Example: if df has columns ["model", "mileage", "price"] with dtypes object, int64, float64, then:
+model TEXT, mileage REAL, price REAL
+
+Why are we using __name__="_main_" for every code?
+It prevents your test/demo code from running every time the module is imported.
+It lets the file serve two purposes:
+As a reusable module (other scripts can import insert_data, query_all, etc.).
+As a standalone script (when run directly, it runs the demo/test logic).

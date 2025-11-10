@@ -1,0 +1,25 @@
+data_loader:
+Load ToyotaCorolla.csv
+Identify & fill missing values
+Convert data types
+Remove redundant or noisy columns
+Summarize missing data handling
+
+vizualizer:
+Generate useful graphs and visualizations to:
+Understand feature relationships
+Detect price-driving variables
+Impress evaluators with EDA ( exploratory data analysis)
+
+db_manager:
+manage a SQLite database for storing the cleaned dataset, allowing:
+Insertion of all records
+Search/filter cars by conditions
+Future CRUD operations
+
+user_interface:
+1. View all cars
+2. Search cars by fuel type, year, or KM
+3. Show statistics/summary of dataset
+4. Visualize data trends (calls visualizer.py)
+5. Exit
