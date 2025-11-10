@@ -1,29 +1,46 @@
- Problem Statement
+The project predicts the resale price of used cars based on features like fuel type, manufacturing year, mileage (km), horsepower, number of doors, and transmission type (automatic/manual).
+* It uses Linear Regression wrapped inside a Scikit-learn Pipeline that includes preprocessing steps (encoding + scaling).
+* Data is stored and retrieved using SQLite for clean, structured data handling.
+* The final model is saved as a `.joblib` file for future use, so predictions can be made instantly without retraining.
 
-To develop a Python-based application that helps users analyze and visualize trends in used Toyota Corolla car sales using real-world data. The project aims to extract insights from features like mileage, fuel type, age, engine specs, and equipment to understand their influence on car prices, and to create a tool for interactive data filtering, basic prediction, and intelligent insights.
+Technical Workflow
 
-Tools used 
+1. Data Source
 
-| Tool                          | Purpose                       |
-| ----------------------------- | ----------------------------- |
-|   Python                      | Core programming              |
-|   Pandas                      | Data cleaning & manipulation  |
-|   NumPy                       | Numerical operations          |
-|   Matplotlib & Seaborn        | Data visualization            |
-|   SQLite3                     | Local database storage        |
-|   Regex (`re`)                | Text preprocessing & cleaning |
-|   Tkinter (optional)          | GUI interface                 |
-|   Jupyter Notebook / VSCode   | IDE for development           |
+   * Dataset: `ToyotaCorolla.csv` (used car dataset)
+   * Loaded → cleaned → inserted into a SQLite database (`database/car_data.db`)
+   * Columns include attributes like `Fuel_Type`, `Mfg_Year`, `KM`, `HP`, `Doors`, `Automatic`, and `Price`.
 
-Goal
+2. Database Handling (`db_manager.py`)
 
-✅ Cleaned and structured Toyota Corolla dataset
-✅ Visual dashboard-style insights (plots, trends)
-✅ SQLite-backed storage for cars with query functions
-✅ A CLI (or GUI) tool that allows:
+   * Creates a local SQLite database and inserts the cleaned dataset.
+   * Ensures table structure is automatically created if missing.
+   * Allows querying all data for training.
 
-Filtering cars by features
+3. Model Building (`model.py`)
 
-Predicting price of a new input car
+   * Preprocessing:
 
-Comparing market and dataset prices (if scraping added)
+     * `OneHotEncoder`: converts categorical variable (`fuel_type`) into numerical columns.
+     * `StandardScaler`: normalizes numeric variables (`mfg_year`, `km`, `hp`, `doors`, `automatic`).
+   * Model:
+
+     * `LinearRegression`: learns the relationship between car features and price.
+   * Pipeline:
+
+     * Combines preprocessing and model into one reusable object.
+   * Evaluation:
+
+     * Dataset split: 80% train / 20% test.
+     * Metrics: MAE, RMSE, R² score.
+     * Top 10 feature coefficients displayed for interpretability.
+   * Model Saving:
+
+     * Stored as `models/price_linear_pipeline.joblib`.
+
+4. Prediction Function
+
+   * Loads the trained `.joblib` pipeline.
+   * Accepts new user inputs (dictionary form).
+   * Outputs predicted car price after automatic preprocessing.
+
