@@ -81,6 +81,3 @@ Example Input(In terminal)
 | Automatic          | 1       |
 
 Estimated Price: $ 15982.94
-
-
-Would you like me to make this README slightly **more visually engaging** (with badges, emojis, and short code snippets), or keep it **formal and minimalistic** for GitHub?
